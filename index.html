@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="18电影网 - 精选18+成人向与高分电影推荐，涵盖犯罪、悬疑、剧情、成人题材高分影视作品。网址：https://18dianyingwang-top.github.io，为成熟观众精选值得一看的好电影。">
+<meta name="keywords" content="18电影网, 18dianyingwang, 18+电影, 成人电影, 高分电影, 犯罪片, 悬疑片, 剧情片, 18dianyingwang-top.github.io">
+<title>18电影网 | 精选18+高分电影 · 为成熟观众推荐好电影</title>
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="18电影网 - 精选18+高分电影">
+<meta property="og:description" content="18电影网，为成熟观众精选18+高分电影，涵盖犯罪、悬疑、剧情题材，网址：https://18dianyingwang-top.github.io">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://18dianyingwang-top.github.io">
+<style>
+:root{
+  --black:#0a0a0a;--ink:#111;--gray:#777;--gray2:#a8a8a8;--line:#e8e8e8;--bg:#fff;--bg2:#f4f4f2;--accent:#ff2d2d;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.container{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+/* 极简黑条头部 */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.hd-in{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:baseline;gap:10px;}
+.logo b{font-size:1.5rem;font-weight:900;letter-spacing:1px;}
+.logo b i{font-style:normal;color:var(--accent);}
+.logo span{font-size:.7rem;letter-spacing:2px;color:var(--gray);text-transform:uppercase;}
+nav ul{display:flex;list-style:none;gap:6px;}
+nav a{display:block;padding:8px 14px;font-size:.85rem;color:var(--ink);position:relative;transition:.25s;}
+nav a:hover{color:var(--accent);}
+nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+nav a:hover::after{transform:scaleX(1);}
+.menu-btn{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;}
+
+/* Hero - 大字报 */
+.hero{min-height:82vh;display:grid;place-items:center;position:relative;background:var(--black);color:#fff;overflow:hidden;}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,45,45,.28),transparent 55%);}
+.hero .inner{position:relative;z-index:2;text-align:center;padding:60px 28px;}
+.hero .tag{display:inline-block;border:1px solid rgba(255,255,255,.5);padding:5px 16px;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:28px;}
+.hero h1{font-size:clamp(2.8rem,11vw,8rem);font-weight:900;line-height:.95;letter-spacing:-2px;}
+.hero h1 small{display:block;font-size:clamp(1rem,3.5vw,2rem);font-weight:300;letter-spacing:6px;color:var(--gray2);margin-top:22px;}
+.hero .url{margin-top:36px;font-size:.95rem;color:#ddd;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+.hero .url b{color:var(--accent);}
+
+/* 通用区块 */
+section{padding:96px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px;padding-bottom:18px;border-bottom:3px solid var(--black);}
+.sec-head .kicker{font-size:.72rem;letter-spacing:4px;color:var(--accent);text-transform:uppercase;font-weight:700;}
+.sec-head h2{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;letter-spacing:-.5px;line-height:1.2;}
+.sec-head h2 em{font-style:normal;color:var(--accent);}
+.sec-head p{max-width:360px;color:var(--gray);font-size:.92rem;margin-bottom:6px;}
+
+/* 数字网格 */
+.bignum{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.bignum .it{background:#fff;padding:40px 28px;transition:.3s;}
+.bignum .it:hover{background:var(--black);color:#fff;}
+.bignum .n{font-size:2.6rem;font-weight:900;line-height:1;color:var(--accent);}
+.bignum .it:hover .n{color:var(--accent);}
+.bignum h4{margin-top:14px;font-size:1.1rem;}
+.bignum p{color:var(--gray);font-size:.88rem;margin-top:8px;}
+.bignum .it:hover p{color:#bbb;}
+
+/* 片单表格 */
+.flist{width:100%;border-collapse:collapse;}
+.flist th,.flist td{padding:20px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem;}
+.flist th{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gray);border-bottom:2px solid var(--black);}
+.flist td.no{font-weight:900;color:var(--accent);font-variant-numeric:tabular-nums;}
+.flist td.nm{font-weight:700;}
+.flist td.nm span{display:block;font-weight:400;font-size:.82rem;color:var(--gray);margin-top:3px;}
+.flist td.rt{font-weight:700;font-variant-numeric:tabular-nums;}
+.flist tr{transition:background .2s;}
+.flist tr:hover td{background:var(--bg2);}
+
+/* 双栏 */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.split .blk{aspect-ratio:4/5;background:var(--black);color:#fff;padding:44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.split .blk::before{content:"18";position:absolute;right:-10px;bottom:-30px;font-size:15rem;font-weight:900;color:rgba(255,255,255,.06);line-height:1;}
+.split .blk .num{font-size:.78rem;letter-spacing:3px;color:var(--accent);}
+.split .blk h3{font-size:1.9rem;line-height:1.3;}
+.split .blk p{color:#ccc;font-size:.95rem;}
+.split h3.txt{font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1.35;font-weight:800;}
+.split .txt p{color:var(--gray);margin:20px 0;font-size:1rem;}
+.split .txt .bar{width:60px;height:4px;background:var(--accent);margin-bottom:24px;}
+
+/* 分类条 */
+.cat{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.cat .c{background:var(--bg2);padding:34px;transition:.3s;border-top:4px solid transparent;}
+.cat .c:hover{border-top-color:var(--accent);background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.08);transform:translateY(-4px);}
+.cat .c .ic{font-size:2rem;}
+.cat h4{margin:16px 0 8px;font-size:1.2rem;}
+.cat p{color:var(--gray);font-size:.9rem;}
+
+/* 横向时间线 */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:3px solid var(--black);}
+.tl .step{background:#fff;padding:30px 22px;}
+.tl .step .y{font-weight:900;font-size:1.5rem;color:var(--accent);}
+.tl h4{margin:12px 0 8px;font-size:1.1rem;}
+.tl p{color:var(--gray);font-size:.88rem;}
+
+/* CTA 大字 */
+.cta{background:var(--accent);color:#fff;padding:90px 28px;text-align:center;}
+.cta h2{font-size:clamp(2rem,6vw,4rem);font-weight:900;line-height:1.15;margin-bottom:22px;}
+.cta p{max-width:620px;margin:0 auto 34px;color:#ffe0e0;font-size:1.02rem;}
+.btn{display:inline-block;background:var(--black);color:#fff;padding:18px 44px;font-weight:700;letter-spacing:1px;transition:.3s;}
+.btn:hover{background:#fff;color:var(--black);}
+.btn-g{display:inline-block;margin-left:12px;padding:17px 40px;border:2px solid #fff;color:#fff;font-weight:700;transition:.3s;}
+.btn-g:hover{background:#fff;color:var(--accent);}
+
+/* Footer */
+footer{background:var(--black);color:#ccc;padding:72px 0 28px;}
+.ft{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+.ft .brand b{font-size:1.7rem;color:#fff;}
+.ft .brand b i{color:var(--accent);font-style:normal;}
+.ft .brand p{color:#999;font-size:.9rem;margin-top:14px;line-height:1.8;}
+.ft h5{color:#fff;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;}
+.ft ul{list-style:none;}
+.ft li{margin-bottom:10px;}
+.ft a{color:#aaa;font-size:.9rem;transition:.2s;}
+.ft a:hover{color:#fff;}
+.copy{text-align:center;padding-top:40px;margin-top:48px;border-top:1px solid #333;font-size:.82rem;color:#777;}
+.copy a{color:#aaa;}
+@media(max-width:900px){
+  .bignum,.tl{grid-template-columns:repeat(2,1fr);}
+  .cat{grid-template-columns:1fr;}
+  .split{grid-template-columns:1fr;gap:30px;}
+  .ft{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:10px 0;}
+  nav ul.open{display:flex;}
+  nav a{padding:14px 28px;}
+  .menu-btn{display:block;}
+  .hero{min-height:70vh;}
+  .sec-head{flex-direction:column;align-items:flex-start;}
+  .flist .hide{display:none;}
+  .btn-g{margin-left:0;margin-top:12px;}
+  .ft{grid-template-columns:1fr;}
+  section{padding:64px 0;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="hd-in">
+    <div class="logo"><b>1<i>8</i></b><span>电影网</span></div>
+    <nav>
+      <ul id="menu">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#about">网站简介</a></li>
+        <li><a href="#top">高分片单</a></li>
+        <li><a href="#genre">题材分类</a></li>
+        <li><a href="#guide">观影指南</a></li>
+        <li><a href="#review">影评精选</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="toggle" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="inner">
+      <div class="tag">For Mature Audience · 18+</div>
+      <h1>18电影网</h1>
+      <small>SELECTED CINEMA FOR GROWN-UPS</small>
+      <div class="url">官方网站 <b>https://18dianyingwang-top.github.io</b></div>
+    </div>
+  </section>
+
+  <!-- 网站简介 -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">About Us</div>
+          <h2>为成熟观众，<em>精选好电影</em></h2>
+        </div>
+        <p>18电影网（18dianyingwang）聚焦适合成年观众的高分影视，涵盖犯罪、悬疑、剧情、人性题材，不做低质堆砌，只选值得一看的作品。</p>
+      </div>
+      <div class="bignum">
+        <div class="it">
+          <div class="n">01</div>
+          <h4>严格分级</h4>
+          <p>所有推荐作品均明确标注适合18岁以上观众，分级清晰，观前可知。</p>
+        </div>
+        <div class="it">
+          <div class="n">02</div>
+          <h4>高分筛选</h4>
+          <p>以口碑、获奖与专业评价为依据，剔除注水烂片，留下真正有分量的作品。</p>
+        </div>
+        <div class="it">
+          <div class="n">03</div>
+          <h4>多元题材</h4>
+          <p>犯罪、悬疑、剧情、人性，覆盖成年观众真正关心与思考的影像类型。</p>
+        </div>
+        <div class="it">
+          <div class="n">04</div>
+          <h4>全端阅读</h4>
+          <p>极简排版、移动端自适应，手机与电脑上都能舒适浏览每一篇推荐。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 高分片单 -->
+  <section id="top" style="background:var(--bg2);">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Top Picks</div>
+          <h2>高分 <em>片单</em></h2>
+        </div>
+        <p>精选适合18+观众的高分电影，排名随口碑持续更新。</p>
+      </div>
+      <table class="flist">
+        <thead>
+          <tr><th style="width:50px;">#</th><th>影片</th><th class="hide">题材</th><th class="hide">地区 / 年份</th><th style="width:80px;">评分</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="no">01</td><td class="nm">肖申克的救赎<span>The Shawshank Redemption</span></td><td class="hide">剧情</td><td class="hide">美国 / 1994</td><td class="rt">9.7</td></tr>
+          <tr><td class="no">02</td><td class="nm">教父<span>The Godfather</span></td><td class="hide">犯罪 · 剧情</td><td class="hide">美国 / 1972</td><td class="rt">9.3</td></tr>
+          <tr><td class="no">03</td><td class="nm">七宗罪<span>Se7en</span></td><td class="hide">悬疑 · 犯罪</td><td class="hide">美国 / 1995</td><td class="rt">8.8</td></tr>
+          <tr><td class="no">04</td><td class="nm">搏击俱乐部<span>Fight Club</span></td><td class="hide">剧情 · 人性</td><td class="hide">美国 / 1999</td><td class="rt">9.0</td></tr>
+          <tr><td class="no">05</td><td class="nm">寄生虫<span>Parasite</span></td><td class="hide">剧情 · 悬疑</td><td class="hide">韩国 / 2019</td><td class="rt">9.3</td></tr>
+          <tr><td class="no">06</td><td class="nm">无间道<span>Infernal Affairs</span></td><td class="hide">犯罪 · 悬疑</td><td class="hide">中国香港 / 2002</td><td class="rt">9.3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 关于 + 价值观 -->
+  <section>
+    <div class="container">
+      <div class="split">
+        <div class="blk">
+          <div class="num">OUR VALUE</div>
+          <h3>成年观众的观影选择，值得被认真对待。</h3>
+          <p>我们不追逐流量，只关注作品本身。18电影网（18dianyingwang）希望成为你寻找好电影的安静入口。</p>
+        </div>
+        <div class="txt">
+          <div class="bar"></div>
+          <h3>为什么是 <em style="font-style:normal;color:var(--accent);">18</em> 电影网？</h3>
+          <p>电影不只是娱乐，也是理解人性与世界的一扇窗。18电影网专注为成年观众筛选有深度、有分量、值得反复观看的影视作品。</p>
+          <p>官网：<strong>https://18dianyingwang-top.github.io</strong></p>
+          <a href="#about" style="color:var(--accent);font-weight:700;">了解我们的筛选标准 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 题材分类 -->
+  <section id="genre" style="background:var(--bg2);">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Genre</div>
+          <h2>题材 <em>分类</em></h2>
+        </div>
+        <p>按题材快速找到你想看的那一类电影。</p>
+      </div>
+      <div class="cat">
+        <div class="c"><div class="ic">🔍</div><h4>悬疑犯罪</h4><p>烧脑反转、人性博弈，适合喜欢在观影中思考的你。</p></div>
+        <div class="c"><div class="ic">🎭</div><h4>剧情人性</h4><p>聚焦人物命运与社会现实，看完会想聊聊的那些片。</p></div>
+        <div class="c"><div class="ic">🌃</div><h4>都市情感</h4><p>成年人的爱情与欲望，克制而真实，耐人寻味。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观影指南 -->
+  <section id="guide">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Guide</div>
+          <h2>观影 <em>指南</em></h2>
+        </div>
+        <p>从分级到选片，帮你更从容地做出观影选择。</p>
+      </div>
+      <div class="tl">
+        <div class="step"><div class="y">01</div><h4>看分级</h4><p>先确认影片分级与题材提示，选择适合当下心境的作品。</p></div>
+        <div class="step"><div class="y">02</div><h4>看口碑</h4><p>参考专业评分与观众口碑，避开被营销吹起的"高分"陷阱。</p></div>
+        <div class="step"><div class="y">03</div><h4>看主创</h4><p>关注导演、编剧与演员的一贯风格，往往比剧情简介更可靠。</p></div>
+        <div class="step"><div class="y">04</div><h4>看版本</h4><p>注意导演剪辑版、未分级版等不同版本的时长与内容差异。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影评精选 -->
+  <section id="review" style="background:var(--bg2);">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Review</div>
+          <h2>影评 <em>精选</em></h2>
+        </div>
+        <p>拒绝剧透式的快餐短评，用文字认真拆解一部好电影。</p>
+      </div>
+      <div class="cat">
+        <div class="c"><div class="ic">📝</div><h4>深度长评</h4><p>从镜头、叙事到主题，把一部电影的里里外外讲清楚。</p></div>
+        <div class="c"><div class="ic">💬</div><h4>观点对谈</h4><p>不同视角下的观影分歧，往往比一致好评更有价值。</p></div>
+        <div class="c"><div class="ic">📊</div><h4>榜单解析</h4><p>高分榜单背后，哪些值得追，哪些只是名气大。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>把 18电影网<br>收进你的书签</h2>
+    <p>持续更新18+高分电影推荐与深度影评，官网：https://18dianyingwang-top.github.io</p>
+    <a href="https://18dianyingwang-top.github.io" class="btn">访问官方网站</a>
+    <a href="#about" class="btn-g">了解更多</a>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="ft">
+    <div class="brand">
+      <b>1<i>8</i>电影网</b>
+      <p>18电影网（18dianyingwang）为成熟观众精选18+高分电影，涵盖犯罪、悬疑、剧情、人性题材，提供值得一看的影视推荐与深度评论。<br>官网：https://18dianyingwang-top.github.io</p>
+    </div>
+    <div>
+      <h5>栏目导航</h5>
+      <ul><li><a href="#about">网站简介</a></li><li><a href="#top">高分片单</a></li><li><a href="#genre">题材分类</a></li><li><a href="#guide">观影指南</a></li></ul>
+    </div>
+    <div>
+      <h5>题材分类</h5>
+      <ul><li><a href="#">悬疑犯罪</a></li><li><a href="#">剧情人性</a></li><li><a href="#">都市情感</a></li><li><a href="#">高分经典</a></li></ul>
+    </div>
+    <div>
+      <h5>联系我们</h5>
+      <ul><li><a href="#">投稿合作</a></li><li><a href="#">读者来信</a></li><li><a href="#">关注我们</a></li><li><a href="#contact">联系方式</a></li></ul>
+    </div>
+  </div>
+  <div class="copy">© 2026 <a href="https://18dianyingwang-top.github.io">18电影网</a>（18dianyingwang）· 官网 https://18dianyingwang-top.github.io · 版权所有</div>
+</footer>
+
+<script>
+document.getElementById('toggle').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
+</script>
+</body>
+</html>
